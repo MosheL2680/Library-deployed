@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/static/js/customers.js"></script>
+    <script src="static/js/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Customers</title>
+</head>
+
+<body class="bg-image">
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="Loans">Loans</a>
+        <a href="Books">Books</a>
+        <a class="active" href="Customers">Customers</a>
+    </div>
+
+    <div style="padding-left:16px; padding-top:10px; margin-left: 10px;">
+        <br><br>
+        <h2>Manage customers</h2>
+    </div>
+
+    <button id="toggleFormButton" style="margin-left: 10px;">Add New Customer</button>
+    <input type="text" id="searchInput" placeholder="Enter name to search" onkeypress="search()" style="margin-left: 10px;">
+    <button onclick="getAllCustomers()">Cancel</button><br><br>
+
+    <div id="addCustomerForm" style="display: none; margin-left: 10px;">
+        <h5>Add a New Cusomer</h5>
+        <form id="newCustomerForm">
+            <label for="customerID">customerID:</label>
+            <input type="number" id="customerID" name="customerID" required><br>
+
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name" required><br>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required><br>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <button type="submit">Add customer</button>
+        </form>
+    </div>
+
+    <div id="editCustomerForm" style="display: none; margin-left: 10px;">
+        <h5>edit customer</h5>
+        <form id="editForm">
+            <label for="customerID">New customerID:</label>
+            <input type="number" id="newCustomerID" name="customerID"><br>
+
+            <label for="Name">New name:</label>
+            <input type="text" id="newName" name="Name"><br>
+
+            <label for="age">New age:</label>
+            <input type="number" id="newAge" name="newAge"><br>
+
+            <label for="city">New city:</label>
+            <input type="text" id="newCity" name="newCity"><br>
+            
+    
+            <button type="submit">Edit customer</button>
+            <button onclick="toggleEditCustomerForm()">Cancel</button>
+        </form>
+    </div>
+    <div>
+        <table class="table" id="customersTable" style="margin-left: 10px;"></table>
+    </div>
+
+</body>
+
+</html>

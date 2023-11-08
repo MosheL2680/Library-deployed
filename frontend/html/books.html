@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/static/js/books.js"></script>
+    <script src="static/js/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Books</title>
+</head>
+
+<body class="bg-image">
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="Loans">Loans</a>
+        <a href="Books" class="active">Books</a>
+        <a href="Customers">Customers</a>
+    </div>
+
+    <div style="padding-left:16px; padding-top:10px; margin-left:10px">
+        <br><br>
+        <h2>Manage books</h2>
+    </div>
+
+    <button id="toggleFormButton" style="margin-left: 10px;">Add New Book</button>
+    <input type="text" id="searchInput" placeholder="Enter name to search" onkeypress="search()" style="margin-left: 10px;">
+    <button onclick="getAllBooks()">Cancel</button><br><br>
+
+    <div id="addBookForm" style="display: none; margin-left: 10px;">
+        <h5>Add a New Book</h5>
+        <form id="newBookForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required><br>
+
+            <label for="publishedYear">Publication Year:</label>
+            <input type="number" id="publishedYear" name="publishedYear" required><br>
+
+            <label>Book Type:</label><br>
+            <input type="radio" id="bookType1" name="bookType" value="1" required>
+            <label for="bookType1">1 - return within 10 days</label><br>
+
+            <input type="radio" id="bookType2" name="bookType" value="2">
+            <label for="bookType2">2 - return within 5 days</label><br>
+
+            <input type="radio" id="bookType3" name="bookType" value="3">
+            <label for="bookType3">3 - return within 2 days</label><br>
+
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
+
+    <div id="editBookForm" style="display: none; margin-left: 10px;">
+        <h5>edit book</h5>
+        <form id="editForm">
+            <label for="title">New title:</label>
+            <input type="text" id="newTitle" name="title"><br>
+
+            <label for="author">New author:</label>
+            <input type="text" id="newAuthor" name="author"><br>
+
+            <label for="publishedYear">New publication year:</label>
+            <input type="number" id="newPublishedYear" name="newPublishedYear"><br>
+
+            <label>New Book Type:</label><br>
+            <input type="radio" id="newBookType1" name="newBookType" value="1">
+            <label for="bookType1">1</label><br>
+
+            <input type="radio" id="newBookType2" name="newBookType" value="2">
+            <label for="bookType2">2</label><br>
+
+            <input type="radio" id="newBookType3" name="newBookType" value="3">
+            <label for="bookType3">3</label><br>
+
+            <button type="submit">Edit Book</button>
+            <button onclick="toggleEditBookForm()">Cancel</button>
+        </form>
+    </div>
+    <div>
+        <table class="table" id="booksTable" style="margin-left: 10px;"></table>
+    </div>

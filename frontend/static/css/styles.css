@@ -1,0 +1,101 @@
+/* This file contain CSS for all HTML files */
+
+body {
+  margin-left: 100px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.sidenav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Style for the sidebar */
+.sidenav {
+  height: 100%;
+  /* Full-height sidebar */
+  width: 77.5px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed position to keep it in view */
+  top: 55px;
+  /* Adjust this value to create space below the top menu */
+  left: 0;
+  background-color: #04AA6D;
+  /* Background color */
+  padding-top: 20px;
+  /* Add some top padding */
+}
+
+.sidenav h2 {
+  color: #fff;
+  /* Header text color */
+  text-align: center;
+  /* Center-align the header text */
+}
+
+.sidenav a {
+  padding: 10px 10px;
+  /* Add padding to the links */
+  text-decoration: none;
+  /* Remove underlines from links */
+  font-size: 18px;
+  /* Font size for links */
+  color: #fff;
+  /* Text color for links */
+  display: block;
+  /* Display links as block elements */
+}
+
+.sidenav a:hover {
+  background-color: #555;
+  /* Background color on hover */
+}
+
+/* Style for the table container */
+#loansTableContainer {
+  margin-left: 270px;
+  /* Adjust this value to create space for the sidebar */
+  padding: 20px;
+  /* Add padding to the table container */
+}
+
+
+.bg-image {
+  background-image: url('../img/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
+}
