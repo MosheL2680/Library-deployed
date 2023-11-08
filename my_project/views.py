@@ -13,7 +13,7 @@ def index_page():
 
 @renders.route('/Loans')
 def loans_page():
-    return render_template('loans.html')
+    return render_template('loansp.html')
 
 @renders.route('/Books')
 def books_page():
