@@ -1,7 +1,9 @@
 # Library Management System
 
 The Library Management System is a web-based application built using Flask and SQLAlchemy for managing books, customers, and loans in a library. This README provides an overview of the project, its features, and instructions for setting up and running the application.
-*Visit my live website to see it actualy runs: https://library-6.onrender.com *
+
+Visit my live website to see it actualy runs: https://library-6.onrender.com 
+(I'm using a simple free server so it may take a few moments for the website to show up)
 
 ## Table of Contents
 
