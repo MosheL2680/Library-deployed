@@ -2,6 +2,7 @@
 # It initializes the Flask app, configures the database connection, and registers blueprints.
 
 from flask import Flask
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -12,6 +13,7 @@ app = Flask(__name__, static_folder='templates/static')
 # Configure the SQLAlchemy database connection with an SQLite database named 'library.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///library.db'
 db = SQLAlchemy(app)
+CORS(app)
 
 
 ###Register blueprints###
